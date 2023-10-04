@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'/>
+    <title>游戏网站导航 - example.com</title>
+    <script src="./public/js/jquery-3.1.1.min.js"></script>
+    <link rel="stylesheet" href="./public/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <script src="./public/bootstrap/js/bootstrap.js"></script>
+    <meta name="title" content="游戏网站导航"/>
+    <meta name="keywords" content="游戏 网址导航 攻略 门户 论坛 视频 直播 小游戏"/>
+    <meta name="description"
+          content="游戏网站导航(example.com)，收录了大量优秀游戏相关网站，可以快速地帮助您找到您需要的网站。"/>
+</head>
+<body>
+<div class="container">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+                    <span class="sr-only"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img alt="icon" src="./favicon.ico">
+                </a>
+                <a class="navbar-brand" href="#">游戏网站导航</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                <ul class="nav navbar-nav">
+                    <li><a onclick="AddFavorite(window.location,document.title)" href="javascript:void(0)"><span
+                            class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>&nbsp;收藏本站</a></li>
+                    <li><a onclick="SetHome(window.location)" href="javascript:void(0)"><span
+                            class="glyphicon glyphicon-file" aria-hidden="true"></span>&nbsp;设为首页</a></li>
+                </ul>
+                <form action="https://www.baidu.com/s" method="get" class="navbar-form navbar-right" target="_blank">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="wd" placeholder="搜索..." baiduSug="1">
+                    </div>
+                    <button type="submit" class="btn btn-default">百度搜索</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="page-header">
+        <div style="float:left"><h1>游戏网站导航<small>&nbsp;&nbsp;-&nbsp;&nbsp;http://example.com</small></h1></div>
+        <div style="float:right"><br>
+            <iframe src="./weather.html" width="600" height="60" frameborder="0" marginwidth="0" marginheight="0"
+                    scrolling="no"></iframe>
+        </div>
+        <div style="clear:both"></div>
+    </div>
+    <div class="col-md-3">
+        <div class="thumbnail panel panel-default">
+            <!--<img alt="游戏网站导航" src="./img/370x224.png" style="height: auto; width: 100%; display: block;">-->
+            <div class="caption">
+                <h3>游戏网站导航</h3>
+                <p>游戏网站导航(example.com)，收录了大量优秀游戏关网站，可以快速地帮助您找到您需要的网站。</p>
+                <p><a onclick="AddFavorite(window.location,document.title)" class="btn btn-primary"
+                      href="javascript:void(0)"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>&nbsp;收藏本站</a>&nbsp;<a
+                        onclick="SetHome(window.location)" class="btn btn-primary" href="javascript:void(0)"><span
+                        class="glyphicon glyphicon-file" aria-hidden="true"></span>&nbsp;设为首页</a></p>
+            </div>
+        </div>
+        <iframe src="./weather2.html" width="255" height="320" frameborder="0" marginwidth="0" marginheight="0"
+                scrolling="no"></iframe>
+    </div>
+    <div class="col-md-9">
+        <div class="panel panel-default">
+            <div class="panel-heading">常用网站</div>
+            <div class="panel-body">
+                <ul id="myTabs" class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#baidu" id="home-tab" role="tab" data-toggle="tab"
+                                                              aria-controls="baidu" aria-expanded="true">百度</a></li>
+                    <li role="presentation" class=""><a href="#360" role="tab" id="profile-tab" data-toggle="tab"
+                                                        aria-controls="360" aria-expanded="false">360</a></li>
+                    <li role="presentation" class=""><a href="#sogou" role="tab" id="profile-tab" data-toggle="tab"
+                                                        aria-controls="sogou" aria-expanded="false">搜狗</a></li>
+                    <li role="presentation" class=""><a href="#" id="profile-tab">更多>>></a></li>
+                </ul>
+                <div id="myTabContent" class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade active in" id="baidu" aria-labelledby="home-tab"><br>
+                        <div class="col-md-0"></div>
+                        <div class="col-md-2"><h4>百度搜索</h4><!--<img width="auto" height="34px" src="img/baidu.png" alt="baidu" align="left"
+                                           border="0">--></div>
+                        <form action="https://www.baidu.com/s" method="get" target="_blank">
+                            <div class="col-md-8">
+                                <div class="panel"><input type="text" class="form-control" onfocus="checkHttps"
+                                                          name="wd"
+                                                          size="30" placeholder="百度搜索..." baiduSug="1"></div>
+                            </div>
+                            <input type="submit" class="btn btn-default input-group-addon" style="
+							width: 100px;
+							height: 34px;
+							color: #fff;
+							letter-spacing: 1px;
+							background: #3385ff;
+							border-bottom: 1px solid #2d78f4;
+							outline: medium;
+							-webkit-appearance: none;
+							-webkit-border-radius: 0;"
+                                   value="百度搜索">
+                        </form>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane fade" id="360" aria-labelledby="profile-tab"><br>
+                        <div class="col-md-0"></div>
+                        <div class="col-md-2"><h4>360搜索</h4><!--<img width="auto" height="34px" src="img/360.png" alt="360" align="left"
+                                           border="0">--></div>
+                        <form action="https://www.so.com/s" method="get" target="_blank">
+                            <div class="col-md-8">
+                                <div class="panel"><input type="text" class="form-control" onfocus="checkHttps" name="q"
+                                                          size="30" placeholder="360搜索..."></div>
+                            </div>
+                            <input type="submit" class="btn btn-default input-group-addon" style="
+							width: 100px;
+							height: 34px;
+							color: #fff;
+							letter-spacing: 1px;
+							background: #19b955;
+							border-bottom: 1px solid #fff;
+							outline: medium;
+							-webkit-appearance: none;
+							-webkit-border-radius: 0;"
+                                   value="360搜索">
+                        </form>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane fade" id="sogou" aria-labelledby="profile-tab"><br>
+                        <div class="col-md-2"><h4>搜狗搜索</h4><!--<img width="auto" height="34px" src="img/sogou.png" alt="sogou" align="left"
+                                           border="0">--></div>
+                        <form action="https://www.sogou.com/web" method="get" target="_blank">
+                            <div class="col-md-8">
+                                <div class="panel"><input type="text" class="form-control" onfocus="checkHttps"
+                                                          name="query"
+                                                          size="30" placeholder="搜狗搜索..."></div>
+                            </div>
+                            <input type="submit" class="btn btn-default input-group-addon" style="
+							width: 100px;
+							height: 34px;
+							color: #fff;
+							letter-spacing: 1px;
+							background: #fd6853;
+							border-bottom: 1px solid #fff;
+							outline: medium;
+							-webkit-appearance: none;
+							-webkit-border-radius: 0;"
+                                   value="搜狗搜索">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><a class="btn btn-default btn-xs" href="https://www.baidu.com/" role="button">百度</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.sina.com.cn/" role="button">新浪</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://weibo.com/" role="button">微博</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.sohu.com/" role="button">搜狐</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.qq.com/" role="button">腾讯</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.ifeng.com/" role="button">凤凰</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.163.com/" role="button">网易</a></td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="panel-footer">
+                <div style="float:left"><a tabindex="0" class="btn btn-xs btn-default" role="button" data-toggle="modal"
+                                           data-target=".bs-example-modal-lg"><span class="glyphicon glyphicon-plus"
+                                                                                    aria-hidden="true"></span>&nbsp;添加</a>
+                </div>
+                <div align=right><a class="btn btn-primary btn-xs" href="#" role="button">更多>>></a></div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">游戏门户</div>
+            <table class="table table-striped">
+                <tbody>
+                <tr>
+                    <td><a class="btn btn-default btn-xs" href="http://www.ali213.net/" role="button">游侠网</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.17173.com/" role="button">17173</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.tgbus.com/" role="button">电玩巴士</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.duowan.com/" role="button">多玩游戏网</a>
+                    </td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.duotegame.com/"
+                           role="button">多特单机游戏</a></td>
+                </tr>
+                <tr>
+                    <td><a class="btn btn-default btn-xs" href="http://www.pcgames.com.cn/"
+                           role="button">太平洋游戏网</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.52pk.com/" role="button">52PK</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.gamedog.cn/" role="button">游戏狗手游网</a>
+                    </td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.gamersky.com/" role="button">游民星空</a>
+                    </td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.3dmgame.com/" role="button">3DMGAME</a></td>
+                </tr>
+                <tr>
+                    <td><a class="btn btn-default btn-xs" href="http://www.yxdown.com/" role="button">游迅网</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.doyo.cn/" role="button">逗游网</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.yzz.cn/" role="button">叶子猪游戏网</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.uuu9.com/" role="button">游久网</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.ptbus.com/" role="button">口袋巴士</a></td>
+                </tr>
+                <tr>
+                    <td><a class="btn btn-default btn-xs" href="http://games.qq.com/" role="button">腾讯游戏频道</a>
+                    </td>
+                    <td><a class="btn btn-default btn-xs" href="http://games.sina.com.cn/" role="button">新浪游戏</a>
+                    </td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.178.com/" role="button">178游戏网</a></td>
+                    <td><a class="btn btn-default btn-xs" href="" role="button"></a></td>
+                    <td><a class="btn btn-default btn-xs" href="" role="button"></a></td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="panel-footer">
+                <div style="float:left"><a tabindex="0" class="btn btn-xs btn-default" role="button" data-toggle="modal"
+                                           data-target=".bs-example-modal-lg"><span class="glyphicon glyphicon-plus"
+                                                                                    aria-hidden="true"></span>&nbsp;添加</a>
+                </div>
+                <div align=right><a class="btn btn-primary btn-xs" href="https://www.baidu.com/s?wd=游戏门户"
+                                    role="button">更多>>></a></div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">游戏论坛</div>
+            <table class="table table-striped">
+                <tbody>
+                <tr>
+                    <td><a class="btn btn-default btn-xs" href="http://bbs.duowan.com/" role="button">多玩游戏论坛</a>
+                    </td>
+                    <td><a class="btn btn-default btn-xs" href="http://bbs.17173.com/" role="button">17173游戏论坛</a>
+                    </td>
+                    <td><a class="btn btn-default btn-xs" href="https://bbs.houdao.com/" role="button">猴岛游戏论坛</a>
+                    </td>
+                    <td><a class="btn btn-default btn-xs" href="http://bbs.tgbus.com/" role="button">电玩巴士论坛</a>
+                    </td>
+                    <td><a class="btn btn-default btn-xs" href="http://bbs.ptbus.com/" role="button">口袋巴士论坛</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a class="btn btn-default btn-xs" href="http://www.52fzba.com/"
+                           role="button">我爱辅助游戏论坛</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://bbs.9game.cn/" role="button">九游论坛</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://game.ali213.net/"
+                           role="button">游侠NETSHOW论坛</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://bbs.uuu9.com/" role="button">游久论坛</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://bbs.3dmgame.com/" role="button">3DMGAME论坛</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a class="btn btn-default btn-xs" href="http://bbs.pcgames.com.cn/"
+                           role="button">太平洋游戏论坛</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://bbs.yzz.cn/" role="button">叶子猪游戏论坛</a>
+                    </td>
+                    <td><a class="btn btn-default btn-xs" href="http://bbs.52pk.com/" role="button">52PK游戏论坛</a>
+                    </td>
+                    <td><a class="btn btn-default btn-xs" href="http://bbs.178.com/" role="button">178游戏论坛</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://bbs.gamersky.com/" role="button">游民星空论坛</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a class="btn btn-default btn-xs" href="http://my.4399.com/" role="button">4399游戏吧</a></td>
+                    <td><a class="btn btn-default btn-xs" href="https://mc.netease.com/"
+                           role="button">网易我的世界论坛</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.minecraftforum.net/" role="button">Minecraft
+                        Forum</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.mcbbs.net/"
+                           role="button">我的世界中文论坛</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.mckuai.com/" role="button">麦块论坛</a></td>
+                </tr>
+                <tr>
+                    <td><a class="btn btn-default btn-xs" href="http://www.zuimc.com/" role="button">最MC论坛</a></td>
+                    <td><a class="btn btn-default btn-xs" href="" role="button"></a></td>
+                    <td><a class="btn btn-default btn-xs" href="" role="button"></a></td>
+                    <td><a class="btn btn-default btn-xs" href="" role="button"></a></td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="panel-footer">
+                <div style="float:left"><a tabindex="0" class="btn btn-xs btn-default" role="button" data-toggle="modal"
+                                           data-target=".bs-example-modal-lg"><span class="glyphicon glyphicon-plus"
+                                                                                    aria-hidden="true"></span>&nbsp;添加</a>
+                </div>
+                <div align=right><a class="btn btn-primary btn-xs" href="https://www.baidu.com/s?wd=游戏论坛"
+                                    role="button">更多>>></a></div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">游戏官网</div>
+            <table class="table table-striped">
+                <tbody>
+                <tr>
+                    <td><a class="btn btn-default btn-xs" href="http://cf.qq.com/" role="button">穿越火线</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://tps.qq.com/" role="button">枪神纪</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://lol.qq.com/" role="button">英雄联盟</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://nz.qq.com/" role="button">逆战</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://codol.qq.com/" role="button">Call Of Duty
+                        Online</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a class="btn btn-default btn-xs" href="http://dnf.qq.com/" role="button">地下城与勇士</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://x5.qq.com/" role="button">QQ炫舞</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://speed.qq.com/" role="button">QQ飞车</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://sm.qq.com/" role="button">神之浩劫</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://pvp.qq.com/" role="button">王者荣耀</a></td>
+                </tr>
+                <tr>
+                    <td><a class="btn btn-default btn-xs" href="https://www.wowchina.com/" role="button">魔兽世界</a>
+                    </td>
+                    <td><a class="btn btn-default btn-xs" href="http://ow.blizzard.cn/" role="button">守望先锋</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.sanguosha.com/" role="button">三国杀</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.battleofballs.com/"
+                           role="button">球球大作战</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://hs.blizzard.cn/" role="button">炉石传说</a></td>
+                </tr>
+                <tr>
+                    <td><a class="btn btn-default btn-xs" href="https://minecraft.net/" role="button">Minecraft官网</a>
+                    </td>
+                    <td><a class="btn btn-default btn-xs" href="http://mc.163.com/" role="button">我的世界中国版</a>
+                    </td>
+                    <td><a class="btn btn-default btn-xs" href="" role="button"></a></td>
+                    <td><a class="btn btn-default btn-xs" href="" role="button"></a></td>
+                    <td><a class="btn btn-default btn-xs" href="" role="button"></a></td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="panel-footer">
+                <div style="float:left"><a tabindex="0" class="btn btn-xs btn-default" role="button" data-toggle="modal"
+                                           data-target=".bs-example-modal-lg"><span class="glyphicon glyphicon-plus"
+                                                                                    aria-hidden="true"></span>&nbsp;添加</a>
+                </div>
+                <div align=right><a class="btn btn-primary btn-xs" href="https://www.baidu.com/s?wd=游戏官网"
+                                    role="button">更多>>></a></div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">小游戏</div>
+            <table class="table table-striped">
+                <tbody>
+                <tr>
+                    <td><a class="btn btn-default btn-xs" href="http://www.4399.com/" role="button">4399小游戏</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.7k7k.com/" role="button">7k7k小游戏</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.abab.com/" role="button">ABAB小游戏</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://xyx.2144.cn/" role="button">2144小游戏</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.3366.com/" role="button">3366小游戏</a></td>
+                </tr>
+                <tr>
+                    <td><a class="btn btn-default btn-xs" href="http://www.doyo.cn/flash" role="button">逗游小游戏</a>
+                    </td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.3839.com/" role="button">3839小游戏</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.3155.com/" role="button">3155小游戏</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://xiaoyouxi.kumi.cn/" role="button">酷米小游戏</a>
+                    </td>
+                    <td><a class="btn btn-default btn-xs" href="http://xyx.iask.sina.com.cn/"
+                           role="button">爱问小游戏</a></td>
+                </tr>
+                <tr>
+                    <td><a class="btn btn-default btn-xs" href="http://www.7323.com/" role="button">7323小游戏</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.6822.com/" role="button">6822小游戏</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.3899.net/" role="button">3899小游戏</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.9669.cn/" role="button">9669小游戏</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.yx99.com/" role="button">99小游戏</a></td>
+                </tr>
+                <tr>
+                    <td><a class="btn btn-default btn-xs" href="http://www.44921.cn/" role="button">44921小游戏</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.08507.com/" role="button">08507小游戏</a>
+                    </td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.3199.cn/" role="button">3199小游戏</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://xiaoyouxi.360.cn/"
+                           role="button">360小游戏频道</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://xiaoyouxi.2345.com/" role="button">2345小游戏</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a class="btn btn-default btn-xs" href="http://wanwan.sina.com.cn/xyx/"
+                           role="button">新浪玩玩小游戏</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://xyx.kaixin001.com/" role="button">开心小游戏</a>
+                    </td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.caihongtang.com/"
+                           role="button">彩虹堂小游戏</a></td>
+                    <td><a class="btn btn-default btn-xs" href="" role="button"></a></td>
+                    <td><a class="btn btn-default btn-xs" href="" role="button"></a></td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="panel-footer">
+                <div style="float:left"><a tabindex="0" class="btn btn-xs btn-default" role="button" data-toggle="modal"
+                                           data-target=".bs-example-modal-lg"><span class="glyphicon glyphicon-plus"
+                                                                                    aria-hidden="true"></span>&nbsp;添加</a>
+                </div>
+                <div align=right><a class="btn btn-primary btn-xs" href="https://www.baidu.com/s?wd=小游戏"
+                                    role="button">更多>>></a></div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">游戏视频</div>
+            <table class="table table-striped">
+                <tbody>
+                <tr>
+                    <td><a class="btn btn-default btn-xs" href="http://game.youku.com/" role="button">优酷游戏频道</a>
+                    </td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.aipai.com/" role="button">爱拍原创</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://v.qq.com/games/"
+                           role="button">腾讯视频游戏频道</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://games.iqiyi.com/"
+                           role="button">爱奇艺游戏频道</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://tv.sohu.com/ugc/game/"
+                           role="button">搜狐游戏频道</a></td>
+                </tr>
+                <tr>
+                    <td><a class="btn btn-default btn-xs" href="http://v.baidu.com/gameindex/"
+                           role="button">百度视频游戏频道</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://game.tudou.com/" role="button">土豆游戏</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://games.ku6.com/" role="button">酷6网游戏频道</a>
+                    </td>
+                    <td><a class="btn btn-default btn-xs" href="http://game.pptv.com/"
+                           role="button">PPTV聚力游戏频道</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://games.le.com/" role="button">乐视游戏频道</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a class="btn btn-default btn-xs" href="http://www.bilibili.com/video/game.html" role="button">哔哩哔哩游戏视频</a>
+                    </td>
+                    <td><a class="btn btn-default btn-xs" href="http://17173.tv.sohu.com/" role="button">173游戏网</a>
+                    </td>
+                    <td><a class="btn btn-default btn-xs" href="http://v.pcgames.com.cn/"
+                           role="button">太平洋游戏网视频站</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://games.sina.com.cn/video/"
+                           role="button">新浪游戏视频</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://v.3dmgame.com/" role="button">3DMGAME游戏视频</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a class="btn btn-default btn-xs" href="http://v.17173.com/" role="button">17173游戏视频</a>
+                    </td>
+                    <td><a class="btn btn-default btn-xs" href="" role="button"></a></td>
+                    <td><a class="btn btn-default btn-xs" href="" role="button"></a></td>
+                    <td><a class="btn btn-default btn-xs" href="" role="button"></a></td>
+                    <td><a class="btn btn-default btn-xs" href="" role="button"></a></td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="panel-footer">
+                <div style="float:left"><a tabindex="0" class="btn btn-xs btn-default" role="button" data-toggle="modal"
+                                           data-target=".bs-example-modal-lg"><span class="glyphicon glyphicon-plus"
+                                                                                    aria-hidden="true"></span>&nbsp;添加</a>
+                </div>
+                <div align=right><a class="btn btn-primary btn-xs" href="https://www.baidu.com/s?wd=游戏视频"
+                                    role="button">更多>>></a></div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">游戏直播</div>
+            <table class="table table-striped">
+                <tbody>
+                <tr>
+                    <td><a class="btn btn-default btn-xs" href="http://www.huya.com/" role="button">虎牙直播</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://longzhu.com/" role="button">龙珠直播</a></td>
+                    <td><a class="btn btn-default btn-xs" href="https://www.douyu.com/" role="button">斗鱼直播</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.panda.tv/" role="button">熊猫直播</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.zhanqi.tv/" role="button">战旗直播</a></td>
+                </tr>
+                <tr>
+                    <td><a class="btn btn-default btn-xs" href="http://live.bilibili.com/"
+                           role="button">哔哩哔哩直播</a></td>
+                    <td><a class="btn btn-default btn-xs" href="" role="button"></a></td>
+                    <td><a class="btn btn-default btn-xs" href="" role="button"></a></td>
+                    <td><a class="btn btn-default btn-xs" href="" role="button"></a></td>
+                    <td><a class="btn btn-default btn-xs" href="" role="button"></a></td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="panel-footer">
+                <div style="float:left"><a tabindex="0" class="btn btn-xs btn-default" role="button" data-toggle="modal"
+                                           data-target=".bs-example-modal-lg"><span class="glyphicon glyphicon-plus"
+                                                                                    aria-hidden="true"></span>&nbsp;添加</a>
+                </div>
+                <div align=right><a class="btn btn-primary btn-xs" href="https://www.baidu.com/s?wd=游戏直播"
+                                    role="button">更多>>></a></div>
+            </div>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading">友情链接</div>
+            <table class="table table-striped">
+                <tbody>
+                <tr>
+                    <td scope="row"></td>
+                    <td><a class="btn btn-info btn-xs" href="#" role="button"><span class="glyphicon glyphicon-link"
+                                                                                    aria-hidden="true"></span>友情链接</a>
+                    </td>
+                    <td><a class="btn btn-info btn-xs" href="#" role="button"><span class="glyphicon glyphicon-link"
+                                                                                    aria-hidden="true"></span>友情链接</a>
+                    </td>
+                    <td><a class="btn btn-info btn-xs" href="#" role="button"><span class="glyphicon glyphicon-link"
+                                                                                    aria-hidden="true"></span>友情链接</a>
+                    </td>
+                    <td><a class="btn btn-info btn-xs" href="#" role="button"><span class="glyphicon glyphicon-link"
+                                                                                    aria-hidden="true"></span>友情链接</a>
+                    </td>
+                    <td><a class="btn btn-info btn-xs" href="#" role="button"><span class="glyphicon glyphicon-link"
+                                                                                    aria-hidden="true"></span>友情链接</a>
+                    </td>
+                    <td><a class="btn btn-info btn-xs" href="#" role="button"><span class="glyphicon glyphicon-link"
+                                                                                    aria-hidden="true"></span>友情链接</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="panel-footer">
+                <div align=right><a tabindex="0" class="btn btn-xs btn-default" role="button" data-toggle="modal"
+                                    data-target=".bs-example-modal-lg"><span class="glyphicon glyphicon-plus"
+                                                                             aria-hidden="true"></span>&nbsp;添加</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<br>
+<div align=middle>
+    <hr>
+    <br>本站收录的网站排名不分先后，如果无意之中侵犯了您的利益，请使用email告知管理员。
+    <br>若在本页面发现有链接失效、链接跳转错误等情况，请联系管理员，管理员邮箱：admin@example.com
+    <br>Copyright
+    2017&nbsp;-
+    <script>var date = new Date();
+    document.write(date.getFullYear());</script>
+    by example.com
+    <br>Powered by HEX9CF
+    <br>
+    <br>
+    <br>
+</div>
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">^_^</h4>
+            </div>
+            <div class="modal-body">
+                提交网址给网址导航方法：<br>
+                发现了一个好的网站，希望网址导航可以收录？<br>
+                <br>
+                How123网址导航收录条件：<br>
+                一、您的网站不能出现以下内容：<br>
+                （一）违反宪法或法律法规规定的；<br>
+                （二）危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一的；<br>
+                （三）损害国家荣誉和利益的，损害公共利益的；<br>
+                （四）煽动民族仇恨、民族歧视，破坏民族团结的；<br>
+                （五）破坏国家宗教政策，宣扬邪教和封建迷信的；<br>
+                （六）散布谣言，扰乱社会秩序，破坏社会稳定的；<br>
+                （七）散布淫秽、色情、赌博、暴力、凶杀、恐怖或者教唆犯罪的；<br>
+                （八）侮辱或者诽谤他人，侵害他人合法权益的；<br>
+                （九）含有法律、行政法规禁止的其他内容的。<br>
+                二、您的网站是应该是健康的，不能出现不良内容。<br>
+                三、您的网站需要经常更新内容。<br>
+                四、您的网站的内容应该是原创的。<br>
+                五、您的网站内的广告不能过多。<br>
+                <br>
+                若您的网站可以满足以上条件，那就联系管理员，把您的网站的网址、简介发到的管理员邮箱，邮箱地址在下面。<br>
+                <br>
+                收录后若您的网站发生改动导致不符合收录条件，我们会取消对您的网站的收录。<br>
+                我们可以随时撤销对您的网站的收录。<br>
+                <hr>
+                若在本页面发现有链接失效、链接跳转错误等情况，请联系管理员，邮箱地址在下面。<br>
+                本站收录的网站排名不分先后，如果无意之中侵犯了贵站的利益，请使用email联系管理员。<br>
+                <hr>
+                管理员邮箱：admin@example.com<br>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="js/index.js"></script>
+</html>
+<!--
+					<tr>
+					  <td><a class="btn btn-default btn-xs" href="" role="button"></a></td>
+					  <td><a class="btn btn-default btn-xs" href="" role="button"></a></td>
+					  <td><a class="btn btn-default btn-xs" href="" role="button"></a></td>
+					  <td><a class="btn btn-default btn-xs" href="" role="button"></a></td>
+					  <td><a class="btn btn-default btn-xs" href="" role="button"></a></td>
+					</tr>
+					<tr>
+					  <td><a class="btn btn-info btn-xs" href="" role="button"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>&nbsp;</a></td>
+					  <td><a class="btn btn-info btn-xs" href="" role="button"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>&nbsp;</a></td>
+					  <td><a class="btn btn-info btn-xs" href="" role="button"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>&nbsp;</a></td>
+					  <td><a class="btn btn-info btn-xs" href="" role="button"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>&nbsp;</a></td>
+					  <td><a class="btn btn-info btn-xs" href="" role="button"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>&nbsp;</a></td>
+					</tr>
+-->
